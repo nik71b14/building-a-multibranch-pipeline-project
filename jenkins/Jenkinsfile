@@ -45,16 +45,16 @@ pipeline {
                 //sh 'docker buildx build -h'
                 
                 //sh 'docker buildx build --force-rm=true -t test-image:${BUILD_ID} -f Dockerfile .'
-		        //sh 'cat Dockerfile'
+		//sh 'cat Dockerfile'
                 sh 'sudo docker buildx build --force-rm=true -t test-image:${BUILD_ID} -f Dockerfile .'
 
                 // Elimina eventuali dangling images
                 //sh 'docker image prune -f'
 
                 // Push image to Dockerhub
-		        sh 'sudo chmod 0700 ./jenkins/scripts/docker-push.sh'
+		sh 'sudo chmod 0700 ./jenkins/scripts/docker-push.sh'
                 sh './jenkins/scripts/docker-push.sh'                		
-	            echo 'Push Completed'   
+	        echo 'Push Completed'   
             }
         }
 
