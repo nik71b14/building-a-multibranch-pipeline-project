@@ -11,4 +11,4 @@ sudo docker tag "test-image:$BUILD_ID" "goinnova/test-image:$BUILD_ID"
 sudo docker push "goinnova/test-image:$BUILD_ID"
 
 # Clean
-sudo docker rm "goinnova/test-image:$BUILD_ID"
+sudo docker image rm "goinnova/test-image:$BUILD_ID"
